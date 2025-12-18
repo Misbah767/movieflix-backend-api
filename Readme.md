@@ -104,29 +104,24 @@ MovieFlix is designed to provide a **secure and interactive movie platform** wit
 
 ### Clone the repository
 
-git clone https://github.com/Misbah767/CineMaster.git
-cd MovieFlix
-Install dependencies
-bash
-Copy code
-npm install
-Configure environment variables
-Create a .env file in the root directory:
+- git clone https://github.com/Misbah767/CineMaster.git
+- cd MovieFlix
+- Install dependencies
+- bash
+- Copy code
+- npm install
+
+### ⚙️ Environment Variables
+
+Create a `.env` file in the root directory and add:
 
 env
-
-Copy code
-MONGODB_URL=mongodb://localhost:27017/cinemaster
+MONGODB_URL=mongodb://localhost:27017/movieflix
 JWT_SECRET=<your-secret-key>
 SMTP_HOST=smtp-relay.brevo.com
 SMTP_PORT=587
 SMTP_USER=<your-smtp-user>
 SMTP_PASS=<your-smtp-password>
-Run the development server
-bash
-Copy code
-npm run dev
-Server starts at http://localhost:5000
 
 ## 🔐 Authentication & 🎬 Movies Flow
 
@@ -173,9 +168,8 @@ Server starts at http://localhost:5000
 
 ---
 
-Author
-Hafiza Misbah
+---
 
-```
+### Author
 
-```
+**Hafiza Misbah**
