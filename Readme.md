@@ -168,8 +168,6 @@ Create a `.env` file in the root directory and add:
 
 ---
 
----
-
 ### Author
 
 **Hafiza Misbah**
