@@ -104,7 +104,6 @@ CineMaster is designed to provide a **secure and interactive movie platform** wi
 
 ### 1️⃣ Clone the repository
 
-```bash
 git clone https://github.com/Misbah767/CineMaster.git
 cd CineMaster
 2️⃣ Install dependencies
@@ -130,33 +129,32 @@ Server starts at http://localhost:5000
 
 API Endpoints
 Public Routes
-Endpoint	Method	Description
-/api/auth/register	POST	Register a new user (requires OTP)
-/api/auth/login	POST	Login and receive JWT tokens
-/api/auth/verify-account	POST	Verify account via OTP
-/api/auth/resend-account-otp	POST	Resend OTP
-/api/auth/forgot-password	POST	Request password reset OTP
-/api/auth/verify-reset-otp	POST	Verify reset OTP
-/api/auth/resend-reset-otp	POST	Resend OTP for password reset
-/api/auth/reset-password	POST	Reset password after OTP verification
+Endpoint Method Description
+/api/auth/register POST Register a new user (requires OTP)
+/api/auth/login POST Login and receive JWT tokens
+/api/auth/verify-account POST Verify account via OTP
+/api/auth/resend-account-otp POST Resend OTP
+/api/auth/forgot-password POST Request password reset OTP
+/api/auth/verify-reset-otp POST Verify reset OTP
+/api/auth/resend-reset-otp POST Resend OTP for password reset
+/api/auth/reset-password POST Reset password after OTP verification
 
 Protected Routes (Admin/User)
-Endpoint	Method	Roles Allowed	Description
-/api/users/profile	GET	Admin/User	Fetch user profile
-/api/users/profile	PUT	Admin/User	Update user profile
-/api/auth/logout	POST	Admin/User	Logout and revoke refresh token
-/api/auth/refresh	POST	Admin/User	Refresh access token
+Endpoint Method Roles Allowed Description
+/api/users/profile GET Admin/User Fetch user profile
+/api/users/profile PUT Admin/User Update user profile
+/api/auth/logout POST Admin/User Logout and revoke refresh token
+/api/auth/refresh POST Admin/User Refresh access token
 
 Movie Routes
-Endpoint	Method	Roles Allowed	Description
-/api/movies	GET	All	Get all movies
-/api/movies/:id	GET	All	Get single movie by ID
-/api/movies	POST	Admin	Create new movie
-/api/movies/:id	PUT	Admin	Update existing movie
-/api/movies/:id	DELETE	Admin	Delete movie
+Endpoint Method Roles Allowed Description
+/api/movies GET All Get all movies
+/api/movies/:id GET All Get single movie by ID
+/api/movies POST Admin Create new movie
+/api/movies/:id PUT Admin Update existing movie
+/api/movies/:id DELETE Admin Delete movie
 
 ---
-
 
 Authentication Flow
 Registration
@@ -199,5 +197,7 @@ Admin can publish/unpublish movies.
 
 Author
 Hafiza Misbah
+
+```
 
 ```
