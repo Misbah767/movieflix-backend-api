@@ -115,13 +115,13 @@ MovieFlix is designed to provide a **secure and interactive movie platform** wit
 
 Create a `.env` file in the root directory and add:
 
-env
-MONGODB_URL=mongodb://localhost:27017/movieflix
-JWT_SECRET=<your-secret-key>
-SMTP_HOST=smtp-relay.brevo.com
-SMTP_PORT=587
-SMTP_USER=<your-smtp-user>
-SMTP_PASS=<your-smtp-password>
+- env
+  - MONGODB_URL=mongodb://localhost:27017/movieflix
+  - JWT_SECRET=<your-secret-key>
+  - SMTP_HOST=smtp-relay.brevo.com
+  - SMTP_PORT=587
+  - SMTP_USER=<your-smtp-user>
+  - SMTP_PASS=<your-smtp-password>
 
 ## 🔐 Authentication & 🎬 Movies Flow
 
