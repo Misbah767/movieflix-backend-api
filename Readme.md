@@ -22,7 +22,7 @@ It supports **user authentication**, **OTP-based verification**, **password rese
 
 ## 🎯 Purpose
 
-CineMaster is designed to provide a **secure and interactive movie platform** with features for both **Users** and **Admins**, including:
+MovieFlix is designed to provide a **secure and interactive movie platform** with features for both **Users** and **Admins**, including:
 
 - Secure login, registration, and logout
 - OTP-based account verification
@@ -37,7 +37,7 @@ CineMaster is designed to provide a **secure and interactive movie platform** wi
 
 ## Features
 
-### 🔑 User Authentication & Authorization
+### User Authentication & Authorization
 
 - JWT-based authentication (`accessToken` + `refreshToken`)
 - Login, Register, Logout
@@ -45,7 +45,7 @@ CineMaster is designed to provide a **secure and interactive movie platform** wi
 - Password reset via email OTP
 - Secure password hashing using bcrypt
 
-### 🛡️ Role-Based Access Control (RBAC)
+### Role-Based Access Control (RBAC)
 
 - `Admin` and `User` roles
 - Role-specific access to protected routes
@@ -60,12 +60,12 @@ CineMaster is designed to provide a **secure and interactive movie platform** wi
 - Delete movies
 - Retrieve single or all movies
 
-### 👤 User Management
+### User Management
 
 - Users can view and update their profiles
 - Admin can manage users (CRUD operations)
 
-### 📧 Email & Notifications
+### Email & Notifications
 
 - OTP for account verification
 - OTP for password reset
@@ -104,17 +104,17 @@ CineMaster is designed to provide a **secure and interactive movie platform** wi
 
 ### Clone the repository
 
-````bash
 git clone https://github.com/Misbah767/CineMaster.git
-cd CineMaster
- Install dependencies
+cd MovieFlix
+Install dependencies
 bash
 Copy code
 npm install
- Configure environment variables
+Configure environment variables
 Create a .env file in the root directory:
 
 env
+
 Copy code
 MONGODB_URL=mongodb://localhost:27017/cinemaster
 JWT_SECRET=<your-secret-key>
@@ -122,55 +122,60 @@ SMTP_HOST=smtp-relay.brevo.com
 SMTP_PORT=587
 SMTP_USER=<your-smtp-user>
 SMTP_PASS=<your-smtp-password>
- Run the development server
+Run the development server
 bash
 Copy code
 npm run dev
 Server starts at http://localhost:5000
 
+## 🔐 Authentication & 🎬 Movies Flow
 
+### Authentication Flow
 
-Authentication Flow
-Registration
-User provides name, email, and password.
+1. **Registration**
 
-Server hashes password and stores user in DB.
+   - User provides name, email, and password.
+   - Server hashes password and stores user in DB.
+   - OTP sent via email for verification.
 
-OTP sent via email for verification.
+2. **Account Verification**
 
-Account Verification
-User submits OTP received via email.
+   - User submits OTP received via email.
+   - Server validates OTP and activates account.
 
-Server validates OTP and activates account.
+3. **Login**
 
-Login
-User provides credentials.
+   - User provides credentials.
+   - Server verifies credentials and returns `accessToken` + `refreshToken`.
 
-Server verifies credentials and returns accessToken + refreshToken.
+4. **Protected Routes**
 
-Protected Routes
-userAuth middleware validates JWT.
+   - `userAuth` middleware validates JWT.
+   - `roleAuth` middleware enforces role-based access.
 
-roleAuth enforces role-based access.
+5. **Forgot Password**
+   - User requests OTP via email.
+   - After OTP verification, user resets password.
 
-Forgot Password
-User requests OTP via email.
+---
 
-After OTP verification, user resets password.
+### Movies Flow
 
-Movies Flow
-Browse Movies (Users)
-Users can fetch all movies or search by ID.
+#### Browse Movies (Users)
 
-Users see only published movies.
+- Users can fetch all movies or search by ID.
+- Users see only **published movies**.
 
-Manage Movies (Admin)
-Admin can create, update, and delete movies.
+#### Manage Movies (Admin)
 
-Admin can publish/unpublish movies.
+- Admin can **create, update, and delete movies**.
+- Admin can **publish/unpublish movies**.
 
-```bash
+---
+
 Author
 Hafiza Misbah
 
-````
+```
+
+```
