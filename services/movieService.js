@@ -2,7 +2,6 @@ import { Movie } from "../models/index.js";
 import {
   buildQuery,
   buildOptions,
-  checkAdminOrOwner,
   checkAdmin,
 } from "../utils/helpers/index.js";
 
@@ -59,7 +58,7 @@ export const updateMovieService = async (id, data, user) => {
   const movie = await Movie.findById(id);
   if (!movie) throw new Error("Movie not found");
 
-  checkAdminOrOwner(user, movie); // RBAC check
+  checkAdmin(user); // Admin only
 
   Object.assign(movie, data);
   await movie.save();
@@ -72,7 +71,7 @@ export const deleteMovieService = async (id, user) => {
   const movie = await Movie.findById(id);
   if (!movie) throw new Error("Movie not found");
 
-  checkAdminOrOwner(user, movie); // RBAC check
+  checkAdmin(user); // Admin only
 
   await movie.deleteOne();
 

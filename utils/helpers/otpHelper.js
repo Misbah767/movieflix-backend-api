@@ -18,7 +18,7 @@ export const setAccountOtp = async (user) => {
   const otp = generateOtp();
   const otpExpiry = getOtpExpiry();
 
-  // ❗ Purane verify OTP invalidate kar do (important)
+  //
   await Otp.updateMany(
     { user: user._id, type: "verify", used: false },
     { used: true }
@@ -31,11 +31,11 @@ export const setAccountOtp = async (user) => {
     expiresAt: otpExpiry,
   });
 
-  console.log("🟢 ACCOUNT OTP GENERATED");
-  console.log("Email:", user.email);
-  console.log("OTP:", otp);
-  console.log("Expires At:", otpExpiry.toISOString());
-  console.log("NOW:", new Date().toISOString());
+  // console.log("🟢 ACCOUNT OTP GENERATED");
+  // console.log("Email:", user.email);
+  // console.log("OTP:", otp);
+  // console.log("Expires At:", otpExpiry.toISOString());
+  // console.log("NOW:", new Date().toISOString());
 
   return { otp, otpExpiry };
 };

@@ -1,7 +1,9 @@
-const allowedOrigins = [
-  "http://localhost:5173", // frontend dev
-  "https://your-production-site.com", // prod
-];
+import dotenv from "dotenv";
+dotenv.config();
+
+const allowedOrigins = process.env.CORS_ORIGINS
+  ? process.env.CORS_ORIGINS.split(",")
+  : [];
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -11,7 +13,7 @@ const corsOptions = {
       callback(new Error("Not allowed by CORS"));
     }
   },
-  credentials: true, // allow cookies / auth headers
+  credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: [
     "Content-Type",
